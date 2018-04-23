@@ -11,7 +11,6 @@ filmsRouter.get('/', function (req, res) {
 
 
 filmsRouter.get('/:id', function (req, res) {
-  // const index = req.params.id;
   const film = filmsData.find(req.params.id);
   res.json({ film: film} );
 });
@@ -25,7 +24,7 @@ filmsRouter.post('/', function (req, res) {
 filmsRouter.put('/:id', function (req, res) {
   const updatedFilm = req.body.film;
   const index = req.params.id;
-  filmsData.update(index, updatedFilm)
+  filmsData.update(index, updatedFilm);
   res.json({ films: filmsData.all() });
 });
 
